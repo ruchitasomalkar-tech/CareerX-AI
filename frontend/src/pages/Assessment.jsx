@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Assessment() {
-  const [formData, setFormData] = useState({
+function Assessment({ onComplete }) {
+      const [formData, setFormData] = useState({
     education: "",
     interests: [],
     skills: [],
@@ -46,7 +46,7 @@ function Assessment() {
     JSON.stringify(formData)
   );
 
-  alert("Assessment saved! 🚀");
+onComplete();
 };
 
   return (

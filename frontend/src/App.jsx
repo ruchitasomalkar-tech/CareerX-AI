@@ -1,13 +1,48 @@
+import Roadmap from "./pages/Roadmap";
 import { useState } from "react";
 import Assessment from "./pages/Assessment";
+import Recommendations from "./pages/Recommendations";
+import SkillGap from "./pages/SkillGap";
 import "./index.css";
+import Mentor from "./pages/Mentor";
 
 function App() {
-  const [page, setPage] = useState("home");
+const [page, setPage] = useState("home");
+if (page === "assessment") {
+  return (
+    <Assessment
+      onBack={() => setPage("home")}
+      onComplete={() => setPage("recommendations")}
+    />
+  );
+}
 
-  if (page === "assessment") {
-    return <Assessment onBack={() => setPage("home")} />;
-  }
+if (page === "recommendations") {
+  return (
+    <Recommendations
+      onSkillGap={() => setPage("skillgap")}
+    />
+  );
+}
+if (page === "skillgap") {
+  return (
+    <SkillGap
+      onRoadmap={() => setPage("roadmap")}
+    />
+  );
+}
+
+if (page === "roadmap") {
+  return (
+    <Roadmap
+      onMentor={() => setPage("mentor")}
+    />
+  );
+}
+
+if (page === "mentor") {
+  return <Mentor />;
+}
 
   return (
     <div className="app">
