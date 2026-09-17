@@ -1,122 +1,113 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app">
+      <nav className="navbar">
+        <div className="logo">CareerX<span>AI</span></div>
+
+        <div className="nav-links">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <button className="login-btn">Log In</button>
         </div>
-        <div>
-          <h1>Get started</h1>
+      </nav>
+
+      <main className="hero">
+        <div className="hero-content">
+          <div className="badge">✨ AI-Powered Career Guidance</div>
+
+          <h1>
+            Discover the career
+            <br />
+            <span>that fits you.</span>
+          </h1>
+
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            CareerX AI analyzes your skills, interests, and goals to
+            recommend career paths and create a personalized roadmap for you.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+          <div className="hero-buttons">
+            <button className="primary-btn">
+              Start Your Career Journey →
+            </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+            <button className="secondary-btn">
+              Explore Careers
+            </button>
+          </div>
+
+          <div className="trust">
+            <div className="avatars">
+              <span>👩🏻</span>
+              <span>👨🏻</span>
+              <span>👩🏽</span>
+              <span>👨🏽</span>
+            </div>
+            <p>Helping students make smarter career decisions</p>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="hero-card">
+          <div className="card-header">
+            <div>
+              <small>Your Career Match</small>
+              <h3>Data Analyst</h3>
+            </div>
+            <div className="score">94%</div>
+          </div>
+
+          <div className="progress">
+            <div></div>
+          </div>
+
+          <p className="match-text">
+            Strong match based on your interests and skills.
+          </p>
+
+          <div className="skills">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Analytics</span>
+          </div>
+
+          <button className="card-btn">View Career Path →</button>
+        </div>
+      </main>
+
+      <section id="features" className="features">
+        <h2>Everything you need to plan your career.</h2>
+        <p>
+          From discovering careers to building the skills you need to succeed.
+        </p>
+
+        <div className="feature-grid">
+          <div className="feature-card">
+            <div className="icon">🎯</div>
+            <h3>AI Career Recommendations</h3>
+            <p>
+              Find career paths that match your interests, skills, and goals.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <div className="icon">📊</div>
+            <h3>Skill Gap Analysis</h3>
+            <p>
+              Discover which skills you need to develop for your target career.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <div className="icon">🗺️</div>
+            <h3>Personalized Roadmap</h3>
+            <p>
+              Get a step-by-step learning plan designed around your goals.
+            </p>
+          </div>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
