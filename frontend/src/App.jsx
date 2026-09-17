@@ -1,8 +1,20 @@
+import { useState } from "react";
+import Assessment from "./pages/Assessment";
+import "./index.css";
+
 function App() {
+  const [page, setPage] = useState("home");
+
+  if (page === "assessment") {
+    return <Assessment onBack={() => setPage("home")} />;
+  }
+
   return (
     <div className="app">
       <nav className="navbar">
-        <div className="logo">CareerX<span>AI</span></div>
+        <div className="logo">
+          CareerX<span>AI</span>
+        </div>
 
         <div className="nav-links">
           <a href="#features">Features</a>
@@ -22,18 +34,21 @@ function App() {
           </h1>
 
           <p>
-            CareerX AI analyzes your skills, interests, and goals to
-            recommend career paths and create a personalized roadmap for you.
+            CareerX AI analyzes your skills, interests, and goals to recommend
+            career paths and create a personalized roadmap for you.
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">
+            <button
+              className="primary-btn"
+              onClick={() => setPage("assessment")}
+            >
               Start Your Career Journey →
             </button>
 
-            <button className="secondary-btn">
+            <a href="#features" className="secondary-btn">
               Explore Careers
-            </button>
+            </a>
           </div>
 
           <div className="trust">
@@ -43,6 +58,7 @@ function App() {
               <span>👩🏽</span>
               <span>👨🏽</span>
             </div>
+
             <p>Helping students make smarter career decisions</p>
           </div>
         </div>
@@ -53,6 +69,7 @@ function App() {
               <small>Your Career Match</small>
               <h3>Data Analyst</h3>
             </div>
+
             <div className="score">94%</div>
           </div>
 
@@ -76,6 +93,7 @@ function App() {
 
       <section id="features" className="features">
         <h2>Everything you need to plan your career.</h2>
+
         <p>
           From discovering careers to building the skills you need to succeed.
         </p>
