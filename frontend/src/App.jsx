@@ -3,8 +3,9 @@ import { useState } from "react";
 import Assessment from "./pages/Assessment";
 import Recommendations from "./pages/Recommendations";
 import SkillGap from "./pages/SkillGap";
-import "./index.css";
 import Mentor from "./pages/Mentor";
+import MarketTrends from "./pages/MarketTrends";
+import "./index.css";
 
 function App() {
 const [page, setPage] = useState("home");
@@ -43,6 +44,9 @@ if (page === "roadmap") {
 if (page === "mentor") {
   return <Mentor />;
 }
+if (page === "market") {
+  return <MarketTrends />;
+}
 
   return (
     <div className="app">
@@ -52,10 +56,17 @@ if (page === "mentor") {
         </div>
 
         <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <button className="login-btn">Log In</button>
-        </div>
+  <a href="#features">Features</a>
+
+  <button
+    className="nav-market-btn"
+    onClick={() => setPage("market")}
+  >
+    Market Trends
+  </button>
+
+  <button className="login-btn">Log In</button>
+</div>
       </nav>
 
       <main className="hero">
